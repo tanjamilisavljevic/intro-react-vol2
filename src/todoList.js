@@ -1,13 +1,15 @@
 import React from 'react';
 
 export default function TodoList(props) {
-    const todos = ["Don't procrastinate!", " Do work!"];
+
+    const todos = props.todos;
+
     return (
         <div>
             <h1> My TO-DO List</h1>
             <ul>
                 {todos.map((todo) => {
-                   return <li key={todo}> <input type="checkbox"/> {todo} </li>
+                   return <li key={todo.name}> <input type="checkbox"/> {todo.name} </li>
                 })
                 }
             </ul>

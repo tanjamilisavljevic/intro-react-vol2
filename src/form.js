@@ -1,10 +1,16 @@
 import React from 'react';
 import TodoList from "./todoList";
 
-export default function Form(props) {
+export default function Form() {
+
+    const initialTodos = [
+        {name : "Don't procrastinate!", checked : false},
+        {name : " Do work!", checked: false}
+    ];
+
     return (
         <>
-            <TodoList />
+            <TodoList todos={initialTodos}/>
 
             <label htmlFor="newToDo"/>
             <input type="text" name="newToDo" id="newToDo" placeholder="Add a to-do"/>
