@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 export default function TodoList(props) {
 
@@ -9,7 +9,7 @@ export default function TodoList(props) {
             <h1> My TO-DO List</h1>
             <ul>
                 {todos.map((todo) => {
-                   return <li key={todo.name}> <input type="checkbox" checked={todos.checked} /> {todo.name} </li>
+                    return <li key={todo.name}><input type="checkbox" checked={todos.checked}/> {todo.name} </li>
                 })
                 }
             </ul>

@@ -1,21 +1,26 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import TodoList from "./todoList";
 
 export default function Form() {
-
     const initialTodos = [
-        {name : "Don't procrastinate!", checked : false},
-        {name : " Do work!", checked: false}
+        {name: "Don't procrastinate!", checked: false},
+        {name: " Do work!", checked: false}
     ];
+    const inputRef = useRef();
+    const [todos, setTodos] = useState(initialTodos);
+
+    function clickHandler() {
+        const inputElement = inputRef.current.value;
+        setTodos([...todos, {name: inputElement, checked: 'false'}])
+    }
 
     return (
         <>
-            <TodoList todos={initialTodos}/>
-
             <label htmlFor="newToDo"/>
-            <input type="text" name="newToDo" id="newToDo" placeholder="Add a to-do"/>
+            <input ref={inputRef} type="text" name="newToDo" id="newToDo" placeholder="Add a to-do"/>
             <br/>
-            <input type="submit" id="submit" name="submit" value="Add to list"/>
+            <input type="submit" id="submit" name="submit" value="Add to list" onClick={clickHandler}/>
+            < TodoList todos={todos}/>
         </>
     );
 }
