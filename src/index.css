@@ -23,17 +23,37 @@ h1 {
     -webkit-text-stroke-color: black;
 }
 
-ul {
-    background-color: rgba(177, 250, 253, 0.42);
-    font-family: 'Fredoka One', cursive;
-
+.contentWrapper {
+    background-color: #ff8225;
+    padding: 2rem;
+    margin: 3rem;
+    border-radius: 16px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
 }
 
-.inputArea {
-    background-color: lightgoldenrodyellow;
+ol {
+    font-family: 'Fredoka One', cursive;
+    color: #e38ce2;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-size: 1.5rem;
+    letter-spacing: 0.3rem;
 }
 
-input {
+.newTodo {
+    margin: 1rem;
     font-family: 'Fredoka One', cursive;
+    width: 15rem;
+    padding: 0.5rem;
+    border-radius: 16px;
+}
 
+.submit {
+    cursor: pointer;
+    font-family: 'Fredoka One', cursive;
+    padding: 0.5rem;
+    border-radius: 16px;
+    background-color: #e38ce2;
 }

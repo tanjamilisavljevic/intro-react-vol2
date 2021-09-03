@@ -6,15 +6,12 @@ export default function TodoList(props) {
 
     return (
         <div>
-            <div class="headingWrapper">
-                <h1> My TO-DO List</h1>
-            </div>
-            <ul>
+            <ol>
                 {todos.map((todo) => {
                     return <li key={todo.name}><input type="checkbox" checked={todos.checked}/> {todo.name} </li>
                 })
                 }
-            </ul>
+            </ol>
         </div>
     );
 }

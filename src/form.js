@@ -33,12 +33,18 @@ export default function Form() {
 
     return (
         <>
-            < TodoList todos={todos}/>
-            <div class="inputArea">
+            <div className="headingWrapper">
+                <h1> My TO-DO List</h1>
+            </div>
+            <div className="contentWrapper">
+                < TodoList todos={todos}/>
+
                 <label htmlFor="newToDo"/>
-                <input ref={inputRef} type="text" name="newToDo" id="newToDo" placeholder="Add a to-do"/>
+                <input ref={inputRef} class="newTodo" type="text" name="newToDo" id="newToDo"
+                       placeholder="Do the groceries..."/>
                 <br/>
-                <input type="submit" id="submit" name="submit" value="Add to list" onClick={clickHandler}/>
+                <input class="submit" type="submit" id="submit" name="submit" value="Add to list"
+                       onClick={clickHandler}/>
             </div>
         </>
     );
