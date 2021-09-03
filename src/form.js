@@ -1,11 +1,5 @@
 import React, {useRef, useState, useEffect} from 'react';
 import TodoList from "./todoList";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
 
 const LOCAL_STORAGE_KEY = "TodoList.todos";
 
@@ -37,8 +31,9 @@ export default function Form() {
         console.log(unCheckedTodos);
         setTodos(unCheckedTodos)
     }
+
     function checkTodoHandler(todoName) {
-        const newTodos =  [...todos];
+        const newTodos = [...todos];
         const checkedTodo = newTodos.find(todo => todo.name === todoName);
         if (checkedTodo.checked) {
             checkedTodo.checked = false;

@@ -11,7 +11,8 @@ export default function TodoList(props) {
         <div>
             <ol>
                 {todos.map((todo) => {
-                    return <li key={todo.name}><input type="checkbox" checked={todo.checked} onChange={() => checkTodo(todo.name)}/> {todo.name} </li>
+                    return <li key={todo.name}><input type="checkbox" checked={todo.checked}
+                                                      onChange={() => checkTodo(todo.name)}/> {todo.name} </li>
                 })
                 }
             </ol>
