@@ -13,10 +13,9 @@ export default function Form() {
 
     const inputRef = useRef();
 
-    if (JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))){
+    if (JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))) {
         loadedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    }
-    else {
+    } else {
         loadedTodos = initialTodos;
     }
 
@@ -28,17 +27,19 @@ export default function Form() {
     }
 
     useEffect(() => {
-        window.localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
-    }, [todos]
+            window.localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
+        }, [todos]
     );
 
     return (
         <>
-            <label htmlFor="newToDo"/>
-            <input ref={inputRef} type="text" name="newToDo" id="newToDo" placeholder="Add a to-do"/>
-            <br/>
-            <input type="submit" id="submit" name="submit" value="Add to list" onClick={clickHandler}/>
             < TodoList todos={todos}/>
+            <div class="inputArea">
+                <label htmlFor="newToDo"/>
+                <input ref={inputRef} type="text" name="newToDo" id="newToDo" placeholder="Add a to-do"/>
+                <br/>
+                <input type="submit" id="submit" name="submit" value="Add to list" onClick={clickHandler}/>
+            </div>
         </>
     );
 }
